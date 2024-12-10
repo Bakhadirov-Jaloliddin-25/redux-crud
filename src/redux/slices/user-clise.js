@@ -15,17 +15,20 @@ const usersSlice = createSlice({
       state.value.push(action.payload);
     },
     deleteUser(state, action) {
-      if (confirm("Are you sure?")) {
-        const updatedUsers = state.value.filter(
-          (user) => user.id !== action.payload.id
-        );
-        localStorage.setItem("users", JSON.stringify(updatedUsers));
+      const updatedUsers = state.value.filter(
+        (user) => user.id !== action.payload.id
+      );
+      localStorage.setItem("users", JSON.stringify(updatedUsers));
 
-        state.value = updatedUsers;
-      }
+      state.value = updatedUsers;
     },
     editUser(state, action) {
-  
+      const { id, updatedUser } = action.payload;
+      const index = state.value.findIndex((user) => user.id === id);
+      if (index !== -1) {
+        state.value[index] = { ...state.value[index], ...updatedUser };
+        localStorage.setItem("users", JSON.stringify(state.value));
+      }
     },
   },
 });

@@ -34,73 +34,72 @@ const CreateUser = () => {
   };
 
   return (
-    <div
-      onSubmit={handleSubmit}
-      className="bg-gradient-to-r from-purple-600 via-green-400 to-purple-500 h-screen pt-14"
-    >
+    <div className="h-screen flex justify-center items-center bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900">
       <form
-        action=""
-        className="border-2 rounded-lg flex flex-col justify-center items-center w-[40%] gap-5 mx-auto p-14 bg-[#516091]"
+        onSubmit={handleSubmit}
+        className="bg-white shadow-lg rounded-lg w-full max-w-md p-8 space-y-6"
       >
-        <h2 className="text-[#74bec1] text-2xl">Create new user</h2>
+        <h2 className="text-2xl font-bold text-gray-800 text-center">
+          Create New User
+        </h2>
         <input
           ref={name}
           type="text"
           placeholder="Enter your name"
-          className="w-full border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-200"
+          className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-700"
           required
         />
         <input
           ref={email}
-          type="text"
+          type="email"
           placeholder="Enter your email"
-          className="w-full border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-200"
+          className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-700"
           required
         />
         <input
           ref={age}
           type="number"
           placeholder="Enter your age"
-          className="w-full border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-200"
+          className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-700"
           required
         />
         <input
           ref={profession}
           type="text"
           placeholder="Enter your profession"
-          className="w-full border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-200"
+          className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-700"
           required
         />
-        <div className="flex items-center space-x-6 justify-center gap-5 flex-col">
-          <p className="text-[#74bec1]">Choose your gender</p>
-          <div className="flex justify-evenly w-full gap-8 mx-auto">
-            <label className="flex items-center">
+        <div className="space-y-3">
+          <p className="text-gray-600 text-sm">Choose your gender:</p>
+          <div className="flex justify-around">
+            <label className="flex items-center space-x-2">
               <input
                 type="radio"
                 name="gender"
                 value="Male"
-                className="form-radio text-blue-600 h-5 w-5"
+                className="form-radio text-indigo-500 focus:ring-indigo-500"
                 checked={gender === "Male"}
                 onChange={() => setGender("Male")}
               />
-              <span className="ml-2 text-[#74bec1] ">Male</span>
+              <span className="text-gray-700">Male</span>
             </label>
-            <label className="flex items-center">
+            <label className="flex items-center space-x-2">
               <input
                 type="radio"
                 name="gender"
                 value="Female"
-                className="form-radio text-blue-600 h-5 w-5"
+                className="form-radio text-indigo-500 focus:ring-indigo-500"
                 checked={gender === "Female"}
                 onChange={() => setGender("Female")}
               />
-              <span className="ml-2 text-[#74bec1]">Female</span>
+              <span className="text-gray-700">Female</span>
             </label>
           </div>
         </div>
         <button
-          onClick={() => handleSubmit}
-          className="border-2 rounded-lg w-full py-3 text-[#8b4f80] bg-[#b9c0d5] text-xl hover:bg-slate-400"
+          type="submit"
+          className="w-full bg-indigo-500 text-white py-2 rounded-md text-lg font-semibold hover:bg-indigo-600 transition duration-200"
         >
           Submit
         </button>
