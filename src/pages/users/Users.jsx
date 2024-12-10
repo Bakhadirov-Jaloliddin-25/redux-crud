@@ -29,7 +29,7 @@ const Users = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white pt-20">
+    <div className="min-h-screen bg-gray-900 text-white pt-20 grid place-content-center">
       <h2 className="text-center text-4xl font-bold mb-8">Users</h2>
       {users.length > 0 ? (
         <table className="max-w-4xl mx-auto bg-gray-800 text-left rounded-lg">
@@ -70,7 +70,7 @@ const Users = () => {
           </tbody>
         </table>
       ) : (
-        <p className="text-center mt-10 text-gray-400">No users found</p>
+        <p className="text-center text-gray-400">No users found</p>
       )}
 
       {isEditing && (
